@@ -1,0 +1,14 @@
+{
+  "name": "dircompir",
+  "version": "1.0.0",
+  "description": "Directory comparison tool",
+  "main": "main.js",
+  "scripts": {
+    "start": "./node_modules/.bin/electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "~1.4.13"
+  }
+}
