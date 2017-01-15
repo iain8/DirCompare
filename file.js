@@ -2,6 +2,17 @@ const electron = require('electron');
 const fs = require('fs');
 const path = require('path');
 
+const lists = {
+  A: {
+    files: [],
+    rival: 'B'
+  },
+  B: {
+    files: [],
+    rival: 'A'
+  }
+};
+
 const openDialog = function() {
   const dir = electron.remote.dialog.showOpenDialog({
     buttonLabel: 'Choose',
@@ -10,8 +21,13 @@ const openDialog = function() {
   });
 
   if (dir) {
-    document.querySelector(this.dataset.target + '-dir').innerHTML = dir[0];
-    document.querySelector(this.dataset.target).innerHTML = listFiles(dir[0]).join('');
+    document.querySelector(`.list-${this.dataset.target}-dir`).innerHTML = dir[0];
+
+    lists[this.dataset.target].files = listFiles(dir[0]).filter(e => {
+      return lists[lists[this.dataset.target].rival].files.indexOf(e) === -1}
+    );
+
+    document.querySelector(`.list-${this.dataset.target}`).innerHTML = lists[this.dataset.target].files.join('');
   }
 };
 
