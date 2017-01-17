@@ -5,10 +5,10 @@ class HeaderItem extends React.Component {
     return (
       <div className="pane">
         <div className="toolbar-actions">
-          <button className="btn btn-default open-dialog" data-target="A">
+          <button className="btn btn-default open-dialog" data-target={ this.props.label } onClick={ this.props.showDialog }>
             <span className="icon icon-folder icon-text"></span>
           </button>
-          <span className="list-A-dir"></span>
+          <span className={ `list-${ this.props.label }-dir` }></span>
         </div>
       </div>
     );

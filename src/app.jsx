@@ -1,13 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Header from './components/header.jsx';
-import FileList from './components/file_list.jsx';
+import fs from 'fs';
+import electron from 'electron';
+import Header from './components/header';
+import FileList from './components/file_list';
 
 class App extends React.Component {
+  showDialog () {
+    const dir = electron.remote.dialog.showOpenDialog({
+      buttonLabel: 'Choose',
+      properties: ['openDirectory'],
+      title: 'Select directory'
+    });
+  }
+
   render () {
     return (
       <div>
-        <Header />
+        <Header showDialog={ this.showDialog.bind(this) } />
         <div className="window-content">
           <div className="pane-group">
             <FileList />
