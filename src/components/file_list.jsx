@@ -12,7 +12,9 @@ class FileList extends React.Component {
               <th>Date</th>
             </tr>
           </thead>
-          <tbody className="list-B"></tbody>
+          <tbody className="list-B">
+            { this.props.files }
+          </tbody>
         </table>
       </div>
     );
