@@ -5,6 +5,7 @@ import path from 'path';
 import util from 'util';
 import electron from 'electron';
 import Header from './components/header';
+import Footer from './components/footer';
 import FileList from './components/file_list';
 import FileListItem from './components/file_list_item';
 
@@ -72,7 +73,7 @@ class App extends React.Component {
     return (
       <div>
         <Header dirA={ this.state.A.dir } dirB={ this.state.B.dir } />
-        <main className="container">
+        <main className="columns is-gapless">
           <FileList
             files={ this.state.A.files }
             label="A"
@@ -84,6 +85,7 @@ class App extends React.Component {
             showDialog={ this.showDialog.bind(this) }
           />
         </main>
+        <Footer />
       </div>
     );
   }

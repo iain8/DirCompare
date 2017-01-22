@@ -8,10 +8,20 @@ class FileList extends React.Component {
 
   render () {
     return (
-      <div className="half-width">
-        <ul className="mdc-list mdc-list--two-line mdc-list--dense">
-          { this.props.files }
-        </ul>
+      <div className="column">
+        <table className="table is-narrow is-striped">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Name</th>
+              <th>Modified</th>
+              <th>&nbsp;</th>
+            </tr>
+          </thead>
+          <tbody>
+            { this.props.files }
+          </tbody>
+        </table>
         <button
           className={ `mdc-fab material-icons open-dialog button-${ this.props.label }` }
           aria-label="open"
