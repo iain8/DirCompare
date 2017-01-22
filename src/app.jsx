@@ -75,10 +75,12 @@ class App extends React.Component {
         <main className="container">
           <FileList
             files={ this.state.A.files }
+            label="A"
             showDialog={ this.showDialog.bind(this) } 
           />
           <FileList
             files={ this.state.B.files }
+            label="B"
             showDialog={ this.showDialog.bind(this) }
           />
         </main>

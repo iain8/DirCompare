@@ -11,6 +11,11 @@ class FileListItem extends React.Component {
           <span className="mdc-list-item__text__primary">{ this.props.file }</span>
           <span className="mdc-list-item__text__secondary">{ this.props.date }</span>
         </span>
+        <a className="mdc-list-item__end-detail">
+          <span className="material-icons">
+            more_vert
+          </span>
+        </a>
       </li>
     );
   }
