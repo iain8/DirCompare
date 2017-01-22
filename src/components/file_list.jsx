@@ -3,19 +3,15 @@ import React from 'react';
 class FileList extends React.Component {
   render () {
     return (
-      <div className="pane">
-        <table className="table-striped">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Size</th>
-              <th>Date</th>
-            </tr>
-          </thead>
-          <tbody className="list-B">
-            { this.props.files }
-          </tbody>
-        </table>
+      <div className="half-width">
+        <ul className="mdc-list mdc-list--two-line mdc-list--dense">
+          { this.props.files }
+        </ul>
+        <button className="mdc-fab material-icons open-dialog" aria-label="Favorite">
+          <span className="mdc-fab__icon">
+            folder
+          </span>
+        </button>
       </div>
     );
   }

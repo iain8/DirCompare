@@ -8,13 +8,11 @@ class HeaderItem extends React.Component {
 
   render () {
     return (
-      <div className="pane">
-        <div className="toolbar-actions">
-          <button className="btn btn-default open-dialog" data-target={ this.props.label } onClick={ this.onOpenDialog.bind(this) }>
-            <span className="icon icon-folder icon-text"></span>
-          </button>
-          <span>{ this.props.dir }</span>
-        </div>
+      <div className="half-width mdc-theme--dark">
+        <button className="mdc-button open-dialog" data-target={ this.props.label } onClick={ this.onOpenDialog.bind(this) }>
+          <i className="material-icons md-24 md-light">folder</i>
+        </button>
+        <span className="mdc-typography--body1">{ this.props.dir }</span>
       </div>
     );
   }

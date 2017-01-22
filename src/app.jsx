@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import fs from 'fs';
 import path from 'path';
+import util from 'util';
 import electron from 'electron';
 import Header from './components/header';
 import FileList from './components/file_list';
@@ -55,8 +56,11 @@ class App extends React.Component {
       if (fs.statSync(filePath).isDirectory()) {
         list = this.listFiles(pane, filePath, list);
       } else {
+        const stats = fs.statSync(filePath);
+        const mtime = new Date(util.inspect(stats.mtime));
+
         list.push(
-          <FileListItem file={ file } key={ `${pane}-${file}` } />
+          <FileListItem file={ file } date={ mtime.toLocaleString('en-GB') } key={ `${pane}-${file}` } />
         );
       }
     });
@@ -67,13 +71,17 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <Header showDialog={ this.showDialog.bind(this) } dirA={ this.state.A.dir } dirB={ this.state.B.dir } />
-        <div className="window-content">
-          <div className="pane-group">
-            <FileList files={ this.state.A.files } />
-            <FileList files={ this.state.B.files } />
-          </div>
-        </div>
+        <Header dirA={ this.state.A.dir } dirB={ this.state.B.dir } />
+        <main className="container">
+          <FileList
+            files={ this.state.A.files }
+            showDialog={ this.showDialog.bind(this) } 
+          />
+          <FileList
+            files={ this.state.B.files }
+            showDialog={ this.showDialog.bind(this) }
+          />
+        </main>
       </div>
     );
   }
