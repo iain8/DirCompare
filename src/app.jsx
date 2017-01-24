@@ -72,20 +72,15 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <Header dirA={ this.state.A.dir } dirB={ this.state.B.dir } />
+        <Header />
         <main className="columns is-gapless">
-          <FileList
-            files={ this.state.A.files }
-            label="A"
-            showDialog={ this.showDialog.bind(this) } 
-          />
-          <FileList
-            files={ this.state.B.files }
-            label="B"
-            showDialog={ this.showDialog.bind(this) }
-          />
+          <FileList files={ this.state.A.files } />
+          <FileList files={ this.state.B.files } />
         </main>
-        <Footer />
+        <Footer
+          dirA={ this.state.A.dir }
+          dirB={ this.state.B.dir }
+          showDialog={ this.showDialog.bind(this) } />
       </div>
     );
   }

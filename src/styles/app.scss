@@ -2,6 +2,7 @@
 
 html {
   height: 100%;
+  overflow: hidden;
 }
 
 body {
@@ -36,11 +37,34 @@ nav {
 footer {
   &.nav {
     bottom: 0;
+    text-align: left;
+  }
+
+  &.columns.is-gapless {
+    > .column {
+      padding: 5px;
+    }
   }
 }
 
 main {
   table {
     margin-top: 35px;
+  }
+}
+
+.material-icons {
+  &.small-icon {
+    font-size: 14px;
+  }
+}
+
+.file-list {
+  th {
+    font-size: 12px;
+  }
+
+  td {
+    font-size: 12px;
   }
 }

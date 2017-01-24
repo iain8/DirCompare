@@ -1,14 +1,21 @@
 import React from 'react';
+import DirPicker from './dir_picker';
 
 class Footer extends React.Component {
   render () {
     return (
       <footer className="nav columns is-gapless">
         <div className="column">
-          <p>left</p>
+          <DirPicker 
+            showDialog={ this.props.showDialog } 
+            label="A" 
+            dir={ this.props.dirA } />
         </div>
         <div className="column">
-          <p>right</p>
+          <DirPicker 
+            showDialog={ this.props.showDialog } 
+            label="B" 
+            dir={ this.props.dirB } />
         </div>
       </footer>
     );

@@ -4010,7 +4010,8 @@ label.panel-block {
   padding: 3rem 1.5rem 6rem; }
 
 html {
-  height: 100%; }
+  height: 100%;
+  overflow: hidden; }
 
 body {
   height: 100%; }
@@ -4032,7 +4033,20 @@ nav.nav {
     -webkit-app-region: no-drag; }
 
 footer.nav {
-  bottom: 0; }
+  bottom: 0;
+  text-align: left; }
+
+footer.columns.is-gapless > .column {
+  padding: 5px; }
 
 main table {
   margin-top: 35px; }
+
+.material-icons.small-icon {
+  font-size: 14px; }
+
+.file-list th {
+  font-size: 12px; }
+
+.file-list td {
+  font-size: 12px; }
