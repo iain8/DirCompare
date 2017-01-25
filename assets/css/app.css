@@ -4039,14 +4039,46 @@ footer.nav {
 footer.columns.is-gapless > .column {
   padding: 5px; }
 
-main table {
-  margin-top: 35px; }
+main {
+  height: 100%; }
+  main table {
+    margin-top: 35px; }
 
 .material-icons.small-icon {
   font-size: 14px; }
 
-.file-list th {
-  font-size: 12px; }
-
-.file-list td {
-  font-size: 12px; }
+.file-list {
+  height: 100%; }
+  .file-list thead {
+    display: table;
+    width: 100%; }
+  .file-list tbody {
+    display: block;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll; }
+  .file-list th {
+    font-size: 12px; }
+    .file-list th:first-child {
+      width: 42px; }
+    .file-list th:nth-child(2) {
+      max-width: calc(100% - 146px);
+      width: calc(100% - 146px); }
+    .file-list th:nth-child(3) {
+      width: 78px; }
+    .file-list th:last-child {
+      width: 26px; }
+  .file-list td {
+    font-size: 12px; }
+    .file-list td:first-child {
+      width: 42px; }
+    .file-list td:nth-child(2) {
+      max-width: calc(100% - 146px);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: calc(100% - 146px); }
+    .file-list td:nth-child(3) {
+      width: 78px; }
+    .file-list td:last-child {
+      width: 26px; }

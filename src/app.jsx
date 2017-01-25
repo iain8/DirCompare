@@ -8,6 +8,8 @@ import Header from './components/header';
 import Footer from './components/footer';
 import FileList from './components/file_list';
 import FileListItem from './components/file_list_item';
+import formatDate from 'date-fns/format';
+import isToday from 'date-fns/is_today';
 
 class App extends React.Component {
   constructor () {
@@ -59,9 +61,10 @@ class App extends React.Component {
       } else {
         const stats = fs.statSync(filePath);
         const mtime = new Date(util.inspect(stats.mtime));
+        const date = formatDate(mtime, isToday(mtime) ? 'HH:mm:ss' : 'DD-MM-YYYY');
 
         list.push(
-          <FileListItem file={ file } date={ mtime.toLocaleString('en-GB') } key={ `${pane}-${file}` } />
+          <FileListItem file={ file } date={ date } key={ `${pane}-${file}` } />
         );
       }
     });

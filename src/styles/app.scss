@@ -48,6 +48,8 @@ footer {
 }
 
 main {
+  height: 100%;
+
   table {
     margin-top: 35px;
   }
@@ -60,11 +62,62 @@ main {
 }
 
 .file-list {
+  height: 100%;
+  
+  thead {
+    display: table;
+    width: 100%;
+  }
+
+  tbody {
+    display: block;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
   th {
     font-size: 12px;
+
+    &:first-child {
+      width: 42px;
+    }
+
+    &:nth-child(2) {
+      max-width: calc(100% - 146px);
+      width: calc(100% - 146px);
+    }
+
+    &:nth-child(3) {
+      width: 78px;
+    }
+
+    &:last-child {
+      width: 26px;
+    }
   }
 
   td {
     font-size: 12px;
+
+    &:first-child {
+      width: 42px;
+    }
+
+    &:nth-child(2) {
+      max-width: calc(100% - 146px);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: calc(100% - 146px);
+    }
+
+    &:nth-child(3) {
+      width: 78px;
+    }
+
+    &:last-child {
+      width: 26px;
+    }
   }
 }
