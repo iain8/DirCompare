@@ -13,12 +13,18 @@ class FileList extends React.Component {
               <th>&nbsp;</th>
             </tr>
           </thead>
-          <tbody>
-            { this.props.files }
-          </tbody>
         </table>
+        <div className="file-list-box">
+          <table className="table is-narrow is-striped file-list">
+            <tbody>
+              { this.props.files }
+            </tbody>
+          </table>
+        </div>
       </div>
     );
+
+    // TODO: replace <table> with <div>s - it just isn't working out!
   }
 }
 

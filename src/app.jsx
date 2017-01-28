@@ -1,3 +1,4 @@
+// TODO: replace with preact
 import React from 'react';
 import ReactDOM from 'react-dom';
 import fs from 'fs';
@@ -43,10 +44,18 @@ class App extends React.Component {
     if (dir) {
       update[pane].dir = dir;
 
-      update[pane].files = this.listFiles(pane, dir[0]);
-      // .filter(e => {
-      //   return this.state[this.state[pane].rival].files.indexOf(e) === -1}
-      // );
+      const otherState = this.state[this.state[pane].rival].files;
+
+      update[pane].files = this.listFiles(pane, dir[0]).filter(e => {
+        return !otherState.some((file, index) => {
+          if (file.props.file === e.props.file
+            && file.props.date === e.props.date) {
+            delete otherState[index];
+
+            return false;
+          }
+        });
+      });
 
       this.setState(update);
     }
@@ -64,7 +73,7 @@ class App extends React.Component {
         const date = formatDate(mtime, isToday(mtime) ? 'HH:mm:ss' : 'DD-MM-YYYY');
 
         list.push(
-          <FileListItem file={ file } date={ date } key={ `${pane}-${file}` } />
+          <FileListItem file={ file } date={ date } key={ `${pane}-${filePath}` } />
         );
       }
     });

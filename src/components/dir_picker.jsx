@@ -14,6 +14,7 @@ class DirPicker extends React.Component {
           type="text"
           value={ this.props.dir }
           placeholder="Select directory..."
+          readOnly={ true }
           onClick={ this.onOpenDialog.bind(this) } />
         <span className="icon is-small">
           <i className="material-icons small-icon">folder</i>
