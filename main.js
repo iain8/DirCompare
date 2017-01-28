@@ -9,7 +9,12 @@ const BrowserWindow = electron.BrowserWindow;
 let mainWindow;
 
 function createWindow () {
-  mainWindow = new BrowserWindow({ width: 800, height: 600, frame: false });
+  mainWindow = new BrowserWindow({
+    width: 800,
+    height: 600,
+    frame: 'hidden',
+    titleBarStyle: 'hidden-inset'
+  });
 
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({

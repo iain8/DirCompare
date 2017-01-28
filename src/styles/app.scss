@@ -1,0 +1,130 @@
+@import '../../node_modules/bulma/bulma';
+
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  height: 100%;
+}
+
+#container {
+  height: 100%;
+
+  > div {
+    height: 100%;
+  }
+}
+
+.nav {
+  background-color: $primary;
+  min-height: inherit;
+  position: fixed;
+  width: 100%;
+}
+
+nav {
+  &.nav {
+    -webkit-app-region: drag;
+
+    button {
+      -webkit-app-region: no-drag;
+    }
+  }
+}
+
+footer {
+  &.nav {
+    bottom: 0;
+    text-align: left;
+  }
+
+  &.columns.is-gapless {
+    > .column {
+      padding: 5px;
+    }
+  }
+}
+
+main {
+  height: 100%;
+  padding-top: 35px;
+}
+
+.material-icons {
+  &.small-icon {
+    font-size: 14px;
+    margin-top: -1px;
+    vertical-align: -20%;
+  }
+}
+
+.file-list-box {
+  height: calc(100% - 60px);
+  overflow-y: scroll;
+}
+
+.file-list {
+  margin-bottom: 0;
+  table-layout: fixed;
+  
+  thead {
+    display: table;
+    width: 100%;
+  }
+
+  tbody {
+    height: 100%;
+    margin-bottom: 1.5rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  th {
+    font-size: 12px;
+
+    &:first-child {
+      width: 42px;
+    }
+
+    &:nth-child(2) {
+      width: calc(100% - 146px);
+    }
+
+    &:nth-child(3) {
+      width: 78px;
+    }
+
+    &:last-child {
+      width: 26px;
+    }
+  }
+
+  td {
+    display: inline-block;
+    font-size: 12px;
+
+    &:first-child {
+      width: 40px;
+    }
+
+    &:nth-child(2) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: calc(100% - 146px);
+    }
+
+    &:nth-child(3) {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 80px;
+    }
+
+    &:last-child {
+      width: 26px;
+    }
+  }
+}

@@ -2,65 +2,15 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>DirCompir</title>
 
-    <link href="./assets/css/photon.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/app.css">
   </head>
   <body>
-    <div class="window">
-      <header class="toolbar toolbar-header">
-        <div class="pane-group">
-          <div class="pane">
-            <div class="toolbar-actions">
-              <button class="btn btn-default open-dialog" data-target="A">
-                <span class="icon icon-folder icon-text"></span>
-              </button>
-              <span class="list-A-dir"></span>
-            </div>
-          </div>
-          <div class="pane">
-            <div class="toolbar-actions">
-              <button class="btn btn-default open-dialog" data-target="B">
-                <span class="icon icon-folder icon-text"></span>
-              </button>
-              <span class="list-B-dir"></span>
-            </div>
-          </div>
-        </div>
-      </header>
-      <div class="window-content">
-        <div class="pane-group">
-          <div class="pane">
-            <table class="table-striped">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Size</th>
-                  <th>Date</th>
-                </tr>
-              </thead>
-              <tbody class="list-A">
-              </tbody>
-            </table>
-          </div>
-          <div class="pane">
-            <table class="table-striped">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Size</th>
-                  <th>Date</th>
-                </tr>
-              </thead>
-              <tbody class="list-B">
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div id="container"></div>
   </body>
   <script>
-    require('./file.js')
+    require('./assets/js/app.js')
   </script>
 </html>
