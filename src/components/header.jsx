@@ -1,5 +1,4 @@
 import React from 'react';
-import HeaderItem from './header_item';
 
 class Header extends React.Component {
   render () {

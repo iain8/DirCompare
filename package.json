@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "build": "babel ./src -s -d ./assets/js && node-sass ./src/styles/app.scss assets/css/app.css",
-    "start": "./node_modules/.bin/electron ."
+    "start": "electron .",
+    "test": "mocha --compilers js:babel-register"
   },
   "author": "",
   "license": "ISC",
@@ -13,10 +14,15 @@
     "babel-cli": "~6.18.0",
     "babel-preset-es2015": "~6.18.0",
     "babel-preset-react": "~6.16.0",
+    "babel-register": "~6.22.0",
     "bulma": "~0.3.1",
+    "chai": "~3.5.0",
     "electron": "~1.4.13",
+    "enzyme": "~2.7.1",
+    "mocha": "~3.2.0",
     "node-sass": "~4.3.0",
     "react": "~15.4.2",
+    "react-addons-test-utils": "~15.4.2",
     "react-dom": "~15.4.2"
   },
   "dependencies": {
