@@ -4068,11 +4068,11 @@ main {
     .file-list th:first-child {
       width: 42px; }
     .file-list th:nth-child(2) {
-      width: calc(100% - 146px); }
+      width: calc(100% - 183px); }
     .file-list th:nth-child(3) {
       width: 78px; }
     .file-list th:last-child {
-      width: 26px; }
+      width: 63px; }
   .file-list td {
     display: inline-block;
     font-size: 12px; }
@@ -4082,11 +4082,14 @@ main {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      width: calc(100% - 146px); }
+      width: calc(100% - 183px); }
     .file-list td:nth-child(3) {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
       width: 80px; }
     .file-list td:last-child {
-      width: 26px; }
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 63px; }

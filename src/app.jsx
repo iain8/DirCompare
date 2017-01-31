@@ -1,16 +1,11 @@
 // TODO: replace with preact
 import React from 'react';
 import ReactDOM from 'react-dom';
-import fs from 'fs';
-import path from 'path';
-import util from 'util';
 import electron from 'electron';
 import Header from './components/header';
 import Footer from './components/footer';
 import FileList from './components/file_list';
-import FileListItem from './components/file_list_item';
-import formatDate from 'date-fns/format';
-import isToday from 'date-fns/is_today';
+import FileReader from './libs/file_reader';
 
 class App extends React.Component {
   constructor () {
@@ -37,48 +32,18 @@ class App extends React.Component {
       title: 'Select directory'
     });
 
-    // TODO: do this better
     const update = {};
     update[pane] = {};
 
     if (dir) {
-      update[pane].dir = dir;
+      update[pane].dir = dir[0];
 
       const otherState = this.state[this.state[pane].rival].files;
 
-      update[pane].files = this.listFiles(pane, dir[0]).filter(e => {
-        return !otherState.some((file, index) => {
-          if (file.props.file === e.props.file
-            && file.props.date === e.props.date) {
-            delete otherState[index];
-
-            return false;
-          }
-        });
-      });
+      update[pane].files = FileReader.parseFiles(otherState, pane, dir[0]);
 
       this.setState(update);
     }
-  }
-
-  listFiles (pane, dir, list = []) {
-    fs.readdirSync(dir).forEach(file => {
-      const filePath = path.join(dir, file);
-
-      if (fs.statSync(filePath).isDirectory()) {
-        list = this.listFiles(pane, filePath, list);
-      } else {
-        const stats = fs.statSync(filePath);
-        const mtime = new Date(util.inspect(stats.mtime));
-        const date = formatDate(mtime, isToday(mtime) ? 'HH:mm:ss' : 'DD-MM-YYYY');
-
-        list.push(
-          <FileListItem file={ file } date={ date } key={ `${pane}-${filePath}` } />
-        );
-      }
-    });
-
-    return list;
   }
 
   render () {

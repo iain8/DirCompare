@@ -10,7 +10,7 @@ class FileList extends React.Component {
               <th>Type</th>
               <th>Name</th>
               <th>Modified</th>
-              <th>&nbsp;</th>
+              <th>Size</th>
             </tr>
           </thead>
         </table>
