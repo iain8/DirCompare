@@ -4066,10 +4066,8 @@ main {
   .file-list th {
     font-size: 12px; }
     .file-list th:first-child {
-      width: 42px; }
+      width: calc(100% - 141px); }
     .file-list th:nth-child(2) {
-      width: calc(100% - 183px); }
-    .file-list th:nth-child(3) {
       width: 78px; }
     .file-list th:last-child {
       width: 63px; }
@@ -4077,13 +4075,11 @@ main {
     display: inline-block;
     font-size: 12px; }
     .file-list td:first-child {
-      width: 40px; }
-    .file-list td:nth-child(2) {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      width: calc(100% - 183px); }
-    .file-list td:nth-child(3) {
+      width: calc(100% - 141px); }
+    .file-list td:nth-child(2) {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;

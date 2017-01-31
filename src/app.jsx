@@ -7,7 +7,13 @@ import Footer from './components/footer';
 import FileList from './components/file_list';
 import FileReader from './libs/file_reader';
 
+/**
+ * App component, contains everything
+ */
 class App extends React.Component {
+  /**
+   * Set default state
+   */
   constructor () {
     super();
 
@@ -25,6 +31,11 @@ class App extends React.Component {
     };
   }
 
+  /**
+   * Show the directory selector dialog then update the given file list
+   * 
+   * @param Label of file list to update
+   */
   showDialog (pane) {
     const dir = electron.remote.dialog.showOpenDialog({
       buttonLabel: 'Choose',
@@ -46,6 +57,9 @@ class App extends React.Component {
     }
   }
 
+  /**
+   * Render the whole app
+   */
   render () {
     return (
       <div>

@@ -85,14 +85,10 @@ main {
     font-size: 12px;
 
     &:first-child {
-      width: 42px;
+      width: calc(100% - 143px);
     }
 
     &:nth-child(2) {
-      width: calc(100% - 183px);
-    }
-
-    &:nth-child(3) {
       width: 78px;
     }
 
@@ -106,17 +102,13 @@ main {
     font-size: 12px;
 
     &:first-child {
-      width: 40px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: calc(100% - 143px);
     }
 
     &:nth-child(2) {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        width: calc(100% - 183px);
-    }
-
-    &:nth-child(3) {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;

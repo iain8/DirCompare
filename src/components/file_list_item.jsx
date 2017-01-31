@@ -6,7 +6,6 @@ class FileListItem extends React.Component {
   render () {
     return (
       <tr>
-        <td><i className="material-icons small-icon">image</i></td>
         <td>{ this.props.file }</td>
         <td>{ this.props.date }</td>
         <td>{ this.props.size }</td>
