@@ -89,7 +89,7 @@ main {
     }
 
     &:nth-child(2) {
-      width: calc(100% - 146px);
+      width: calc(100% - 183px);
     }
 
     &:nth-child(3) {
@@ -97,7 +97,7 @@ main {
     }
 
     &:last-child {
-      width: 26px;
+      width: 63px;
     }
   }
 
@@ -113,7 +113,7 @@ main {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        width: calc(100% - 146px);
+        width: calc(100% - 183px);
     }
 
     &:nth-child(3) {
@@ -124,7 +124,10 @@ main {
     }
 
     &:last-child {
-      width: 26px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 63px;
     }
   }
 }

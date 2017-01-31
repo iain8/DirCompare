@@ -36,11 +36,11 @@ class App extends React.Component {
     update[pane] = {};
 
     if (dir) {
-      update[pane].dir = dir;
+      update[pane].dir = dir[0];
 
       const otherState = this.state[this.state[pane].rival].files;
 
-      update[pane].files = FileReader.parseFiles(otherState, pane, dir);
+      update[pane].files = FileReader.parseFiles(otherState, pane, dir[0]);
 
       this.setState(update);
     }
