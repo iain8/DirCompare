@@ -44,11 +44,9 @@ describe('file reader tests', () => {
     const listA = FileReader.parseFiles([], 'A', __dirname + '/data/dir 2');
     const listB = FileReader.parseFiles(listA, 'B',  __dirname + '/data/dir 1');
 
-    expect(listA).to.have.lengthOf(3);
+    expect(listA).to.have.lengthOf(4);
     expect(listB).to.have.lengthOf(3);
-    console.log(listA);
-    console.log(listB);
-    expect(listB[0].props.file).to.equal('3_not_present');
-    expect(listB[1].props.file).to.equal('4_size');
+    expect(listB[0].props.file).to.equal('2_name');
+    expect(listB[1].props.file).to.equal('3_not_present');
   });
 });

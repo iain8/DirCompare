@@ -45,6 +45,10 @@ footer {
       padding: 5px;
     }
   }
+
+  .control {
+    width: calc(100% - 10px);
+  }
 }
 
 main {
@@ -71,7 +75,7 @@ main {
   
   thead {
     display: table;
-    width: 100%;
+    width: calc(100% - 14px);
   }
 
   tbody {

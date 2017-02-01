@@ -4039,6 +4039,9 @@ footer.nav {
 footer.columns.is-gapless > .column {
   padding: 5px; }
 
+footer .control {
+  width: calc(100% - 15px); }
+
 main {
   height: 100%;
   padding-top: 35px; }
@@ -4057,7 +4060,7 @@ main {
   table-layout: fixed; }
   .file-list thead {
     display: table;
-    width: 100%; }
+    width: calc(100% - 14px); }
   .file-list tbody {
     height: 100%;
     margin-bottom: 1.5rem;
@@ -4066,7 +4069,7 @@ main {
   .file-list th {
     font-size: 12px; }
     .file-list th:first-child {
-      width: calc(100% - 141px); }
+      width: calc(100% - 143px); }
     .file-list th:nth-child(2) {
       width: 78px; }
     .file-list th:last-child {
@@ -4078,7 +4081,7 @@ main {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      width: calc(100% - 141px); }
+      width: calc(100% - 143px); }
     .file-list td:nth-child(2) {
       overflow: hidden;
       text-overflow: ellipsis;
