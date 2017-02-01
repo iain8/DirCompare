@@ -3,9 +3,11 @@ import React from 'react';
 /**
  * A list of files
  */
-class FileList extends React.Component {
+class FileList extends React.PureComponent {
   /**
    * Render a file list table
+   * 
+   * @returns string Rendered table
    */
   render () {
     return (

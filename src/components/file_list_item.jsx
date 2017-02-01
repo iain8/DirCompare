@@ -1,8 +1,14 @@
 import React from 'react';
 
-// TODO: replace with React.PureComponent
-
-class FileListItem extends React.Component {
+/**
+ * An item in the file list
+ */
+class FileListItem extends React.PureComponent {
+  /**
+   * Render a row
+   * 
+   * @returns string rendered table row
+   */
   render () {
     return (
       <tr>

@@ -1,7 +1,15 @@
 import React from 'react';
 import DirPicker from './dir_picker';
 
-class Footer extends React.Component {
+/**
+ * Footer component
+ */
+class Footer extends React.PureComponent {
+  /**
+   * Render me a footer
+   * 
+   * @returns string Rendered footer
+   */
   render () {
     return (
       <footer className="nav columns is-gapless">

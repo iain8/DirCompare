@@ -1,11 +1,21 @@
 import React from 'react';
 
-class DirPicker extends React.Component {
-  // TODO: better name
+/**
+ * Directory picker component
+ */
+class DirPicker extends React.PureComponent {
+  /**
+   * Open dialog action
+   */
   onOpenDialog () {
     this.props.showDialog(this.props.label);
   }
 
+  /**
+   * Render picker
+   * 
+   * @returns string Picker HTML
+   */
   render () {
     return (
       <p className="control has-icon">
