@@ -4022,7 +4022,6 @@ body {
     height: 100%; }
 
 .nav {
-  background-color: #00d1b2;
   min-height: inherit;
   position: fixed;
   width: 100%; }
@@ -4032,19 +4031,21 @@ nav.nav {
   nav.nav button {
     -webkit-app-region: no-drag; }
 
-footer.nav {
-  bottom: 0;
-  text-align: left; }
-
-footer.columns.is-gapless > .column {
-  padding: 5px; }
-
-footer .control {
-  width: calc(100% - 15px); }
+footer {
+  padding-left: 9px; }
+  footer.nav {
+    bottom: 0;
+    text-align: left; }
+  footer.columns.is-gapless > .column {
+    padding: 5px; }
+  footer .control {
+    width: calc(100% - 10px); }
 
 main {
   height: 100%;
   padding-top: 35px; }
+  main.columns.is-gapless {
+    margin-left: 15px; }
 
 .material-icons.small-icon {
   font-size: 14px;
@@ -4053,7 +4054,10 @@ main {
 
 .file-list-box {
   height: calc(100% - 60px);
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  border-bottom: 1px solid #dbdbdb; }
+  .file-list-box:first-of-type {
+    border-left: 1px solid #dbdbdb; }
 
 .file-list {
   margin-bottom: 0;

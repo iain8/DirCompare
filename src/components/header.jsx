@@ -12,7 +12,7 @@ class Header extends React.Component {
       <nav className="nav">
         <div className="nav-center">
           <div className="nav-item">
-            <p>DirCompare</p>
+            <p>&nbsp;</p>
           </div>
         </div>
       </nav>
