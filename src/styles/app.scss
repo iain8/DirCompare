@@ -18,7 +18,6 @@ body {
 }
 
 .nav {
-  background-color: $primary;
   min-height: inherit;
   position: fixed;
   width: 100%;
@@ -35,6 +34,8 @@ nav {
 }
 
 footer {
+  padding-left: 9px;
+
   &.nav {
     bottom: 0;
     text-align: left;
@@ -45,11 +46,19 @@ footer {
       padding: 5px;
     }
   }
+
+  .control {
+    width: calc(100% - 10px);
+  }
 }
 
 main {
   height: 100%;
   padding-top: 35px;
+
+  &.columns.is-gapless {
+    margin-left: 15px;
+  }
 }
 
 .material-icons {
@@ -63,6 +72,11 @@ main {
 .file-list-box {
   height: calc(100% - 60px);
   overflow-y: scroll;
+  border-bottom: 1px solid $grey-lighter;
+
+  &:first-of-type {
+    border-left: 1px solid $grey-lighter;
+  }
 }
 
 .file-list {
@@ -71,7 +85,7 @@ main {
   
   thead {
     display: table;
-    width: 100%;
+    width: calc(100% - 14px);
   }
 
   tbody {
@@ -85,14 +99,10 @@ main {
     font-size: 12px;
 
     &:first-child {
-      width: 42px;
+      width: calc(100% - 143px);
     }
 
     &:nth-child(2) {
-      width: calc(100% - 183px);
-    }
-
-    &:nth-child(3) {
       width: 78px;
     }
 
@@ -106,17 +116,13 @@ main {
     font-size: 12px;
 
     &:first-child {
-      width: 40px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: calc(100% - 143px);
     }
 
     &:nth-child(2) {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        width: calc(100% - 183px);
-    }
-
-    &:nth-child(3) {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;

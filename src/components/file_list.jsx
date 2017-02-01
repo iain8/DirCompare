@@ -1,13 +1,20 @@
 import React from 'react';
 
-class FileList extends React.Component {
+/**
+ * A list of files
+ */
+class FileList extends React.PureComponent {
+  /**
+   * Render a file list table
+   * 
+   * @returns string Rendered table
+   */
   render () {
     return (
       <div className="column">
         <table className="table is-narrow is-striped file-list">
           <thead>
             <tr>
-              <th>Type</th>
               <th>Name</th>
               <th>Modified</th>
               <th>Size</th>
@@ -23,8 +30,6 @@ class FileList extends React.Component {
         </div>
       </div>
     );
-
-    // TODO: replace <table> with <div>s - it just isn't working out!
   }
 }
 

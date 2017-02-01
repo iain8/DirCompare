@@ -4022,7 +4022,6 @@ body {
     height: 100%; }
 
 .nav {
-  background-color: #00d1b2;
   min-height: inherit;
   position: fixed;
   width: 100%; }
@@ -4032,16 +4031,21 @@ nav.nav {
   nav.nav button {
     -webkit-app-region: no-drag; }
 
-footer.nav {
-  bottom: 0;
-  text-align: left; }
-
-footer.columns.is-gapless > .column {
-  padding: 5px; }
+footer {
+  padding-left: 9px; }
+  footer.nav {
+    bottom: 0;
+    text-align: left; }
+  footer.columns.is-gapless > .column {
+    padding: 5px; }
+  footer .control {
+    width: calc(100% - 10px); }
 
 main {
   height: 100%;
   padding-top: 35px; }
+  main.columns.is-gapless {
+    margin-left: 15px; }
 
 .material-icons.small-icon {
   font-size: 14px;
@@ -4050,14 +4054,17 @@ main {
 
 .file-list-box {
   height: calc(100% - 60px);
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  border-bottom: 1px solid #dbdbdb; }
+  .file-list-box:first-of-type {
+    border-left: 1px solid #dbdbdb; }
 
 .file-list {
   margin-bottom: 0;
   table-layout: fixed; }
   .file-list thead {
     display: table;
-    width: 100%; }
+    width: calc(100% - 14px); }
   .file-list tbody {
     height: 100%;
     margin-bottom: 1.5rem;
@@ -4066,10 +4073,8 @@ main {
   .file-list th {
     font-size: 12px; }
     .file-list th:first-child {
-      width: 42px; }
+      width: calc(100% - 143px); }
     .file-list th:nth-child(2) {
-      width: calc(100% - 183px); }
-    .file-list th:nth-child(3) {
       width: 78px; }
     .file-list th:last-child {
       width: 63px; }
@@ -4077,13 +4082,11 @@ main {
     display: inline-block;
     font-size: 12px; }
     .file-list td:first-child {
-      width: 40px; }
-    .file-list td:nth-child(2) {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      width: calc(100% - 183px); }
-    .file-list td:nth-child(3) {
+      width: calc(100% - 143px); }
+    .file-list td:nth-child(2) {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;

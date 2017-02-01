@@ -1,12 +1,17 @@
 import React from 'react';
 
-// TODO: replace with React.PureComponent
-
-class FileListItem extends React.Component {
+/**
+ * An item in the file list
+ */
+class FileListItem extends React.PureComponent {
+  /**
+   * Render a row
+   * 
+   * @returns string rendered table row
+   */
   render () {
     return (
       <tr>
-        <td><i className="material-icons small-icon">image</i></td>
         <td>{ this.props.file }</td>
         <td>{ this.props.date }</td>
         <td>{ this.props.size }</td>
