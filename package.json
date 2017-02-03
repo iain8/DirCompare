@@ -1,10 +1,12 @@
 {
-  "name": "dircompir",
+  "name": "dircompare",
   "version": "1.0.0",
   "description": "Directory comparison tool",
   "main": "main.js",
   "scripts": {
-    "build": "babel ./src -s -d ./assets/js && node-sass ./src/styles/app.scss assets/css/app.css",
+    "build": "babel ./src -s -d ./assets/js && node-sass --source-map ./src/styles/app.scss assets/css/app.css",
+    "build-prod": "babel ./src --minified -d ./assets/js && node-sass ./src/styles/app.scss assets/css/app.css",
+    "dist": "npm run build-prod && electron-packager . --out=build --all --overwrite",
     "start": "electron .",
     "test": "mocha --compilers js:babel-register"
   },
@@ -18,15 +20,16 @@
     "bulma": "~0.3.1",
     "chai": "~3.5.0",
     "electron": "~1.4.13",
+    "electron-packager": "~8.5.1",
     "enzyme": "~2.7.1",
     "mocha": "~3.2.0",
     "node-sass": "~4.3.0",
-    "react": "~15.4.2",
-    "react-addons-test-utils": "~15.4.2",
-    "react-dom": "~15.4.2"
+    "react-addons-test-utils": "~15.4.2"
   },
   "dependencies": {
     "date-fns": "~1.27.1",
-    "filesize": "~3.5.4"
+    "filesize": "~3.5.4",
+    "react": "~15.4.2",
+    "react-dom": "~15.4.2"
   }
 }
