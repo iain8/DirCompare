@@ -8,12 +8,18 @@ const BrowserWindow = electron.BrowserWindow;
 // Keep a global reference of the window object
 let mainWindow;
 
+/**
+ * Create the app window
+ */
 function createWindow () {
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    backgroundColor: '#ffffff',
+    devTools: false,
     frame: 'hidden',
-    titleBarStyle: 'hidden-inset'
+    height: 600,
+    title: 'DirCompare',
+    titleBarStyle: 'hidden-inset',
+    width: 900
   });
 
   // and load the index.html of the app.
@@ -24,7 +30,7 @@ function createWindow () {
   }));
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
 
   // Emitted when the window is closed.
   mainWindow.on('closed', () => {
@@ -41,6 +47,7 @@ app.on('window-all-closed', () => {
   }
 });
 
+// create window if not present on activation
 app.on('activate', () => {
   if (mainWindow === null) {
     createWindow();
