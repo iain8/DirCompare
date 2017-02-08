@@ -99,11 +99,11 @@ main {
     font-size: 12px;
 
     &:first-child {
-      width: calc(100% - 143px);
+      width: calc(100% - 144px);
     }
 
     &:nth-child(2) {
-      width: 78px;
+      width: 81px;
     }
 
     &:last-child {
@@ -119,14 +119,14 @@ main {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      width: calc(100% - 143px);
+      width: calc(100% - 144px);
     }
 
     &:nth-child(2) {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      width: 80px;
+      width: 81px;
     }
 
     &:last-child {

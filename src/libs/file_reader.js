@@ -44,8 +44,6 @@ class FileReader {
   static buildList (pane, basePath, relPath = '', list = []) {
     const currentPath = basePath + '/' + relPath;
 
-    console.log(currentPath);
-
     fs.readdirSync(currentPath).forEach(file => {
       const filePath = path.join(currentPath, file);
 

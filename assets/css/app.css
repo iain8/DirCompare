@@ -4073,9 +4073,9 @@ main {
   .file-list th {
     font-size: 12px; }
     .file-list th:first-child {
-      width: calc(100% - 143px); }
+      width: calc(100% - 144px); }
     .file-list th:nth-child(2) {
-      width: 78px; }
+      width: 81px; }
     .file-list th:last-child {
       width: 63px; }
   .file-list td {
@@ -4085,12 +4085,12 @@ main {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      width: calc(100% - 143px); }
+      width: calc(100% - 144px); }
     .file-list td:nth-child(2) {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      width: 80px; }
+      width: 81px; }
     .file-list td:last-child {
       overflow: hidden;
       text-overflow: ellipsis;
