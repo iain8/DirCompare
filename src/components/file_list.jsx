@@ -1,4 +1,5 @@
 import React from 'react';
+import { Table, Thead, Th } from 'reactable';
 
 /**
  * A list of files
@@ -12,22 +13,17 @@ class FileList extends React.PureComponent {
   render () {
     return (
       <div className="column">
-        <table className="table is-narrow is-striped file-list">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Modified</th>
-              <th>Size</th>
-            </tr>
-          </thead>
-        </table>
-        <div className="file-list-box">
-          <table className="table is-narrow is-striped file-list">
-            <tbody>
-              { this.props.files }
-            </tbody>
-          </table>
-        </div>
+        <Table
+          className="table is-narrow is-striped file-list"
+          data={ this.props.files }
+          itemsPerPage={ 20 }
+          pageButtonLimit={ 5 }>
+          <Thead>
+            <Th column="file">Name</Th>
+            <Th column="date">Modified</Th>
+            <Th column="size">Size</Th>
+          </Thead>
+        </Table>
       </div>
     );
   }

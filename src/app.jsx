@@ -63,7 +63,7 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <main className="columns is-gapless">
+        <main className="columns">
           <FileList files={ this.state.A.files } />
           <FileList files={ this.state.B.files } />
         </main>

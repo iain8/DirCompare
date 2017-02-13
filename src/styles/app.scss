@@ -57,7 +57,7 @@ main {
   padding-top: 35px;
 
   &.columns.is-gapless {
-    margin-left: 15px;
+    margin: 0 15px;
   }
 }
 
@@ -81,14 +81,8 @@ main {
 
 .file-list {
   margin-bottom: 0;
-  table-layout: fixed;
-  
-  thead {
-    display: table;
-    width: calc(100% - 14px);
-  }
 
-  tbody {
+  tbody:first-child {
     height: 100%;
     margin-bottom: 1.5rem;
     overflow-x: hidden;
@@ -97,43 +91,70 @@ main {
 
   th {
     font-size: 12px;
-
-    &:first-child {
-      width: calc(100% - 144px);
-    }
-
-    &:nth-child(2) {
-      width: 81px;
-    }
-
-    &:last-child {
-      width: 63px;
-    }
   }
 
   td {
-    display: inline-block;
     font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
 
-    &:first-child {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      width: calc(100% - 144px);
+.reactable-pagination {
+  td {
+    text-align: center;
+  }
+
+  .reactable-previous-page,
+  .reactable-next-page,
+  .reactable-page-button {
+    font-size: 0.875rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid $pagination-border;
+    min-width: 2.5em;
+
+    &:hover {
+      border-color: $pagination-hover-border;
+      color: $pagination-hover;
     }
 
-    &:nth-child(2) {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      width: 81px;
+    &:focus {
+      border-color: $pagination-focus-border;
     }
 
-    &:last-child {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      width: 63px;
+    &:active {
+      box-shadow: $pagination-shadow-inset;
     }
+
+    &[disabled],
+    &.is-disabled {
+      background: $pagination-disabled-background;
+      color: $pagination-disabled;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+
+  .reactable-page-button,
+  .reactable-next-page {
+    &:not(:first-child) {
+      margin-left: 0.375rem;
+    }
+  }
+
+  .reactable-previous-page,
+  .reactable-next-page {
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+  }
+
+  .reactable-current-page {
+    background-color: $pagination-current-background;
+    border-color: $pagination-current-border;
+    color: $pagination-current;
   }
 }

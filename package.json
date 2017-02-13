@@ -30,6 +30,7 @@
     "date-fns": "~1.27.1",
     "filesize": "~3.5.4",
     "react": "~15.4.2",
-    "react-dom": "~15.4.2"
+    "react-dom": "~15.4.2",
+    "reactable": "~0.14.1"
   }
 }
