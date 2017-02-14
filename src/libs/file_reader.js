@@ -17,7 +17,7 @@ class FileReader {
     if (otherState) {
       return fileList.filter(e => {
         const include = !otherState.length || !otherState.some((file, index) => {
-          if (this.isEqual(e.props, file.props)) {
+          if (this.isEqual(e, file)) {
             delete otherState[index];
 
             return true;

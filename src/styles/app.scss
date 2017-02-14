@@ -70,13 +70,7 @@ main {
 }
 
 .file-list-box {
-  height: calc(100% - 60px);
-  overflow-y: scroll;
-  border-bottom: 1px solid $grey-lighter;
-
-  &:first-of-type {
-    border-left: 1px solid $grey-lighter;
-  }
+  position: relative;
 }
 
 .file-list {
@@ -102,6 +96,10 @@ main {
 }
 
 .reactable-pagination {
+  position: absolute;
+  left: 30%;
+  bottom: 30px;
+
   td {
     text-align: center;
   }

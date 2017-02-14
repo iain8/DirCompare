@@ -4053,11 +4053,7 @@ main {
   vertical-align: -20%; }
 
 .file-list-box {
-  height: calc(100% - 60px);
-  overflow-y: scroll;
-  border-bottom: 1px solid #dbdbdb; }
-  .file-list-box:first-of-type {
-    border-left: 1px solid #dbdbdb; }
+  position: relative; }
 
 .file-list {
   margin-bottom: 0; }
@@ -4074,52 +4070,52 @@ main {
     text-overflow: ellipsis;
     white-space: nowrap; }
 
-.reactable-pagination td {
-  text-align: center; }
-
-.reactable-pagination .reactable-previous-page,
-.reactable-pagination .reactable-next-page,
-.reactable-pagination .reactable-page-button {
-  font-size: 0.875rem;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  justify-content: center;
-  text-align: center;
-  border: 1px solid #dbdbdb;
-  min-width: 2.5em; }
-  .reactable-pagination .reactable-previous-page:hover,
-  .reactable-pagination .reactable-next-page:hover,
-  .reactable-pagination .reactable-page-button:hover {
-    border-color: #b5b5b5;
-    color: #363636; }
-  .reactable-pagination .reactable-previous-page:focus,
-  .reactable-pagination .reactable-next-page:focus,
-  .reactable-pagination .reactable-page-button:focus {
-    border-color: #00d1b2; }
-  .reactable-pagination .reactable-previous-page:active,
-  .reactable-pagination .reactable-next-page:active,
-  .reactable-pagination .reactable-page-button:active {
-    box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.2); }
-  .reactable-pagination .reactable-previous-page[disabled], .reactable-pagination .reactable-previous-page.is-disabled,
-  .reactable-pagination .reactable-next-page[disabled],
-  .reactable-pagination .reactable-next-page.is-disabled,
-  .reactable-pagination .reactable-page-button[disabled],
-  .reactable-pagination .reactable-page-button.is-disabled {
-    background: #dbdbdb;
-    color: #7a7a7a;
-    opacity: 0.5;
-    pointer-events: none; }
-
-.reactable-pagination .reactable-page-button:not(:first-child),
-.reactable-pagination .reactable-next-page:not(:first-child) {
-  margin-left: 0.375rem; }
-
-.reactable-pagination .reactable-previous-page,
-.reactable-pagination .reactable-next-page {
-  padding-left: 0.75em;
-  padding-right: 0.75em; }
-
-.reactable-pagination .reactable-current-page {
-  background-color: #00d1b2;
-  border-color: #00d1b2;
-  color: #fff; }
+.reactable-pagination {
+  position: absolute;
+  left: 30%;
+  bottom: 30px; }
+  .reactable-pagination td {
+    text-align: center; }
+  .reactable-pagination .reactable-previous-page,
+  .reactable-pagination .reactable-next-page,
+  .reactable-pagination .reactable-page-button {
+    font-size: 0.875rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid #dbdbdb;
+    min-width: 2.5em; }
+    .reactable-pagination .reactable-previous-page:hover,
+    .reactable-pagination .reactable-next-page:hover,
+    .reactable-pagination .reactable-page-button:hover {
+      border-color: #b5b5b5;
+      color: #363636; }
+    .reactable-pagination .reactable-previous-page:focus,
+    .reactable-pagination .reactable-next-page:focus,
+    .reactable-pagination .reactable-page-button:focus {
+      border-color: #00d1b2; }
+    .reactable-pagination .reactable-previous-page:active,
+    .reactable-pagination .reactable-next-page:active,
+    .reactable-pagination .reactable-page-button:active {
+      box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.2); }
+    .reactable-pagination .reactable-previous-page[disabled], .reactable-pagination .reactable-previous-page.is-disabled,
+    .reactable-pagination .reactable-next-page[disabled],
+    .reactable-pagination .reactable-next-page.is-disabled,
+    .reactable-pagination .reactable-page-button[disabled],
+    .reactable-pagination .reactable-page-button.is-disabled {
+      background: #dbdbdb;
+      color: #7a7a7a;
+      opacity: 0.5;
+      pointer-events: none; }
+  .reactable-pagination .reactable-page-button:not(:first-child),
+  .reactable-pagination .reactable-next-page:not(:first-child) {
+    margin-left: 0.375rem; }
+  .reactable-pagination .reactable-previous-page,
+  .reactable-pagination .reactable-next-page {
+    padding-left: 0.75em;
+    padding-right: 0.75em; }
+  .reactable-pagination .reactable-current-page {
+    background-color: #00d1b2;
+    border-color: #00d1b2;
+    color: #fff; }
