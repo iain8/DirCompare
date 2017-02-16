@@ -23,6 +23,10 @@ class FileList extends React.PureComponent {
     this.updateListLength();
   }
 
+  componentWillUpdate () {
+    this.updateListLength();
+  }
+
   componentDidMount () {
     window.addEventListener('resize', () => this.updateListLength());
   }
