@@ -1,0 +1,24 @@
+footer {
+  bottom: 5px;
+  position: fixed;
+  padding-left: 9px;
+  width: 100%;
+
+  &.columns.is-gapless {
+    > .column {
+      padding: 5px;
+    }
+  }
+
+  .control {
+    width: calc(100% - 10px);
+  }
+
+  .material-icons {
+    &.small-icon {
+      font-size: 14px;
+      margin-top: -1px;
+      vertical-align: -20%;
+    }
+  }
+}

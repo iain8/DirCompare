@@ -56,8 +56,6 @@ class FileReader {
         const stats = fs.statSync(filePath);
         const mtime = new Date(util.inspect(stats.mtime));
         const date = formatDate(mtime, isToday(mtime) ? 'HH:mm:ss' : 'DD-MM-YYYY');
-
-        console.log('added file', (relPath ? relPath + '/' : '') + file);
         
         list.push({
           file: (relPath ? relPath + '/' : '') + file,

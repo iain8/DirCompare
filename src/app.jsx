@@ -6,6 +6,7 @@ import Header from './components/header';
 import Footer from './components/footer';
 import FileList from './components/file_list';
 import FileReader from './libs/file_reader';
+import ProgressBar from './components/progress_bar';
 
 /**
  * App component, contains everything
@@ -27,7 +28,8 @@ class App extends React.Component {
         dir: '',
         files: [],
         rival: 'A'
-      }
+      },
+      loading: false,
     };
   }
 
@@ -47,13 +49,21 @@ class App extends React.Component {
     update[pane] = {};
 
     if (dir) {
+      this.setState({ loading: true });
+
+      console.log('loading:', this.state.loading);
+
       update[pane].dir = dir[0];
 
       const otherState = this.state[this.state[pane].rival].files;
 
       update[pane].files = FileReader.parseFiles(otherState, pane, dir[0]);
 
+      update.loading = false;
+
       this.setState(update);
+
+      console.log('loading:', this.state.loading);
     }
   }
 
@@ -63,6 +73,7 @@ class App extends React.Component {
   render () {
     return (
       <div>
+        <ProgressBar visible={ this.state.loading } />
         <main className="columns">
           <FileList files={ this.state.A.files } />
           <FileList files={ this.state.B.files } />

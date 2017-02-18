@@ -1,0 +1,39 @@
+.file-list-box {
+  padding: 0;
+  position: relative;
+}
+
+.file-list {
+  margin-bottom: 0;
+
+  thead {
+    border-bottom: 1px solid grey;
+  }
+
+  tbody:first-child {
+    height: 100%;
+    margin-bottom: 1.5rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  th {
+    border: 0;
+    font-size: 12px;
+
+    &:first-child {
+      padding-left: 15px;
+    }
+  }
+
+  td {
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &:first-child {
+      padding-left: 15px;
+    }
+  }
+}
