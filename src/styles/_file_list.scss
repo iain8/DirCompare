@@ -1,0 +1,54 @@
+.file-list-box {
+  overflow-x: hidden;
+  padding: 0;
+  position: relative;
+
+  &:last-child {
+    border-left: 1px solid $grey-lighter;
+  }
+}
+
+.file-list {
+  margin-bottom: 0;
+
+  thead {
+    border-bottom: 1px solid $grey-lighter;
+  }
+
+  tbody:first-child {
+    height: 100%;
+    margin-bottom: 1.5rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  th {
+    border: 0;
+    font-size: 12px;
+
+    &:first-child {
+      padding-left: 15px;
+    }
+  }
+
+  td {
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &:first-child {
+      padding-left: 15px;
+    }
+  }
+
+  &:last-child {
+    th:last-child {
+      padding-right: 15px;
+    }
+
+    td:last-child {
+      padding-right: 15px;
+    }
+  }
+}

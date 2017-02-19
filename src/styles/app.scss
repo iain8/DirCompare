@@ -1,139 +1,40 @@
 @import '../../node_modules/bulma/bulma';
 
-html {
-  height: 100%;
-  overflow: hidden;
-}
+@import './layout';
+@import './header';
+@import './file_list';
+@import './pagination';
+@import './footer';
 
-body {
-  height: 100%;
-}
-
-#container {
-  height: 100%;
-
-  > div {
-    height: 100%;
-  }
-}
-
-.nav {
-  min-height: inherit;
-  position: fixed;
-  width: 100%;
-}
-
-nav {
-  &.nav {
-    -webkit-app-region: drag;
-
-    button {
-      -webkit-app-region: no-drag;
-    }
-  }
-}
-
-footer {
-  padding-left: 9px;
-
-  &.nav {
-    bottom: 0;
-    text-align: left;
-  }
-
-  &.columns.is-gapless {
-    > .column {
-      padding: 5px;
-    }
-  }
-
-  .control {
-    width: calc(100% - 10px);
-  }
-}
-
-main {
-  height: 100%;
-  padding-top: 35px;
-
-  &.columns.is-gapless {
-    margin-left: 15px;
-  }
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'), local('MaterialIcons-Regular'), url('../MaterialIcons-Regular.woff2') format('woff2');
 }
 
 .material-icons {
-  &.small-icon {
-    font-size: 14px;
-    margin-top: -1px;
-    vertical-align: -20%;
-  }
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
 }
 
-.file-list-box {
-  height: calc(100% - 60px);
-  overflow-y: scroll;
-  border-bottom: 1px solid $grey-lighter;
-
-  &:first-of-type {
-    border-left: 1px solid $grey-lighter;
-  }
-}
-
-.file-list {
-  margin-bottom: 0;
-  table-layout: fixed;
-  
-  thead {
-    display: table;
-    width: calc(100% - 14px);
-  }
-
-  tbody {
-    height: 100%;
-    margin-bottom: 1.5rem;
-    overflow-x: hidden;
-    overflow-y: scroll;
-  }
-
-  th {
-    font-size: 12px;
-
-    &:first-child {
-      width: calc(100% - 143px);
-    }
-
-    &:nth-child(2) {
-      width: 78px;
-    }
-
-    &:last-child {
-      width: 63px;
-    }
-  }
-
-  td {
-    display: inline-block;
-    font-size: 12px;
-
-    &:first-child {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      width: calc(100% - 143px);
-    }
-
-    &:nth-child(2) {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      width: 80px;
-    }
-
-    &:last-child {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      width: 63px;
-    }
-  }
+.loading {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 50%;
+  width: 200px;
+  margin: 0 auto;
+  z-index: 1;
 }

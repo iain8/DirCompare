@@ -12,7 +12,7 @@ class Footer extends React.PureComponent {
    */
   render () {
     return (
-      <footer className="nav columns is-gapless">
+      <footer className="columns is-gapless">
         <div className="column">
           <DirPicker 
             showDialog={ this.props.showDialog } 

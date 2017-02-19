@@ -1,0 +1,78 @@
+.reactable-pagination {
+  bottom: 60px;
+  position: fixed;
+  width: 50%;
+
+  td {
+    text-align: center;
+  }
+
+  .reactable-page-button {
+    display: none;
+  }
+
+  .reactable-previous-page,
+  .reactable-next-page {
+    font-size: 0.875rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid $pagination-border;
+    min-width: 2.5em;
+    position: absolute;
+
+    &:hover {
+      border-color: $pagination-hover-border;
+      color: $pagination-hover;
+    }
+
+    &:focus {
+      border-color: $pagination-focus-border;
+    }
+
+    &:active {
+      box-shadow: $pagination-shadow-inset;
+    }
+
+    &[disabled],
+    &.is-disabled {
+      background: $pagination-disabled-background;
+      color: $pagination-disabled;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+
+  .reactable-previous-page {
+    left: 15px;
+  }
+
+  .reactable-next-page {
+    right: 15px;
+  }
+
+  .reactable-next-page {
+    &:not(:first-child) {
+      margin-left: 0.375rem;
+    }
+  }
+
+  .reactable-previous-page,
+  .reactable-next-page {
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+  }
+}
+
+.file-list-box:first-of-type {
+  .reactable-pagination {
+    left: 0;
+  }
+}
+
+.file-list-box:last-of-type {
+  .reactable-pagination {
+    right: 0;
+  }
+}

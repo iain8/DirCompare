@@ -17,7 +17,7 @@ class FileReader {
     if (otherState) {
       return fileList.filter(e => {
         const include = !otherState.length || !otherState.some((file, index) => {
-          if (this.isEqual(e.props, file.props)) {
+          if (this.isEqual(e, file)) {
             delete otherState[index];
 
             return true;
@@ -44,25 +44,24 @@ class FileReader {
   static buildList (pane, basePath, relPath = '', list = []) {
     const currentPath = basePath + '/' + relPath;
 
-    console.log(currentPath);
-
     fs.readdirSync(currentPath).forEach(file => {
+      // skip hidden files (TODO: set menu option)
+      if (file.indexOf('.') === 0) return;
+
       const filePath = path.join(currentPath, file);
 
       if (fs.statSync(filePath).isDirectory()) {
-        list = this.buildList(pane, basePath, relPath + file, list);
+        list = this.buildList(pane, basePath, relPath + '/' + file, list);
       } else {
         const stats = fs.statSync(filePath);
         const mtime = new Date(util.inspect(stats.mtime));
         const date = formatDate(mtime, isToday(mtime) ? 'HH:mm:ss' : 'DD-MM-YYYY');
-
-        list.push(
-          <FileListItem
-            file={ (relPath ? relPath + '/' : '') + file } 
-            date={ date }
-            size={ filesize(stats.size) } 
-            key={ `${pane}-${filePath}` } />
-        );
+        
+        list.push({
+          file: (relPath ? relPath + '/' : '') + file,
+          date: date,
+          size: filesize(stats.size),
+        });
       }
     });
 

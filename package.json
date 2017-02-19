@@ -4,7 +4,7 @@
   "description": "Directory comparison tool",
   "main": "main.js",
   "scripts": {
-    "build": "babel ./src -s -d ./assets/js && node-sass --source-map ./src/styles/app.scss assets/css/app.css",
+    "build": "babel ./src -s -d ./assets/js && node-sass ./src/styles/app.scss assets/css/app.css",
     "build-prod": "babel ./src --minified -d ./assets/js && node-sass ./src/styles/app.scss assets/css/app.css",
     "dist": "npm run build-prod && electron-packager . --out=build --all --overwrite",
     "start": "electron .",
@@ -27,9 +27,11 @@
     "react-addons-test-utils": "~15.4.2"
   },
   "dependencies": {
+    "classnames": "~2.2.5",
     "date-fns": "~1.27.1",
     "filesize": "~3.5.4",
     "react": "~15.4.2",
-    "react-dom": "~15.4.2"
+    "react-dom": "~15.4.2",
+    "reactable": "~0.14.1"
   }
 }
