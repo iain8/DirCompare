@@ -1,13 +1,18 @@
 .file-list-box {
+  overflow-x: hidden;
   padding: 0;
   position: relative;
+
+  &:last-child {
+    border-left: 1px solid $grey-lighter;
+  }
 }
 
 .file-list {
   margin-bottom: 0;
 
   thead {
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid $grey-lighter;
   }
 
   tbody:first-child {
@@ -34,6 +39,16 @@
 
     &:first-child {
       padding-left: 15px;
+    }
+  }
+
+  &:last-child {
+    th:last-child {
+      padding-right: 15px;
+    }
+
+    td:last-child {
+      padding-right: 15px;
     }
   }
 }

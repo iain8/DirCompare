@@ -4037,13 +4037,16 @@ header {
   -webkit-app-region: drag; }
 
 .file-list-box {
+  overflow-x: hidden;
   padding: 0;
   position: relative; }
+  .file-list-box:last-child {
+    border-left: 1px solid #dbdbdb; }
 
 .file-list {
   margin-bottom: 0; }
   .file-list thead {
-    border-bottom: 1px solid grey; }
+    border-bottom: 1px solid #dbdbdb; }
   .file-list tbody:first-child {
     height: 100%;
     margin-bottom: 1.5rem;
@@ -4061,9 +4064,13 @@ header {
     white-space: nowrap; }
     .file-list td:first-child {
       padding-left: 15px; }
+  .file-list:last-child th:last-child {
+    padding-right: 15px; }
+  .file-list:last-child td:last-child {
+    padding-right: 15px; }
 
 .reactable-pagination {
-  bottom: 35px;
+  bottom: 60px;
   position: fixed;
   width: 50%; }
   .reactable-pagination td {
@@ -4098,9 +4105,9 @@ header {
       opacity: 0.5;
       pointer-events: none; }
   .reactable-pagination .reactable-previous-page {
-    left: 0; }
+    left: 15px; }
   .reactable-pagination .reactable-next-page {
-    right: 0; }
+    right: 15px; }
   .reactable-pagination .reactable-next-page:not(:first-child) {
     margin-left: 0.375rem; }
   .reactable-pagination .reactable-previous-page,
@@ -4128,10 +4135,32 @@ footer {
     margin-top: -1px;
     vertical-align: -20%; }
 
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url("../MaterialIcons-Regular.woff2") format("woff2"); }
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased; }
+
 .loading {
   position: fixed;
   left: 0;
   right: 0;
   top: 50%;
   width: 200px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  z-index: 1; }

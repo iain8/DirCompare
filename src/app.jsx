@@ -46,7 +46,7 @@ class App extends React.Component {
     });
 
     const update = {};
-    update[pane] = {};
+    update[pane] = { rival: this.state[pane].rival };
 
     if (dir) {
       this.setState({ loading: true });
@@ -55,7 +55,7 @@ class App extends React.Component {
 
       update[pane].dir = dir[0];
 
-      const otherState = this.state[this.state[pane].rival].files;
+      const otherState = this.state[update[pane].rival].files;
 
       update[pane].files = FileReader.parseFiles(otherState, pane, dir[0]);
 
